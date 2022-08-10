@@ -60,4 +60,16 @@ for (let i = 0; i < text.length; i++) {
 console.log(count)
 
 //BONUS 2
-const phraseToCheck = ''
+const phraseToCheck = "race car"
+let reversePhrase = ''
+
+for (let i = phraseToCheck.length - 1; i >= 0; i--) {
+    reversePhrase += phraseToCheck[i]
+}
+
+if (reversePhrase.replaceAll(' ', '') === phraseToCheck.replaceAll(' ', '')) {
+    console.log("It's a palindrome")
+} else {
+    console.log("It's not a palindrome")
+}
+
