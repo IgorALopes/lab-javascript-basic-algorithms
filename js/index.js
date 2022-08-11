@@ -43,29 +43,20 @@ const text = "Et Aliquam semper sem iaculis, laoreet nulla id, pharetra nisi. Ve
 
 console.log(text.split(' ').length)
 
-const text2 = "Et et eta aet et."
+const text2 = "Et et eta aet et." //Texto reduzido para testes
 
 let count = 0
 for (let i = 0; i < text2.length; i++) {
     if (text2[i-1] == undefined || text2[i-1] === " ") {
         if (text2[i].toLowerCase() === "e") {
             if (text2[i+1].toLowerCase() === "t") {
-                if (text2[i+2] === " " || text2[i+2] !== /[a-zA-Z]/g) {
+                if (text2[i+2] === " " || text2[i+2] !== /[a-z]+$/) { // Erro. Está dando true no index 6 quando deveria ser false.
                     count += 1
-                    console.log(i + "a")
+                    console.log(`${i} ${text2[i]}`)
                 }                
             }
         }
-    } /*else if (text2[i] === " ") {
-        if (text2[i+1].toLowerCase() === "e") {
-            if (text2[i+2].toLowerCase() === "t") {
-                if (text2[i+3] !== /[a-zA-Z]/) {
-                    count += 1
-                    console.log(i + "b")
-                }                
-            }
-        }
-    }*/
+    }
     console.log(i)
 }
 console.log(count)
